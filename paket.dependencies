@@ -9,6 +9,7 @@ nuget Newtonsoft.Json
 nuget NSubstitute
 nuget protobuf-net.Grpc.HttpClient
 nuget System.Threading.Tasks.Dataflow >= 4.9
+nuget Elmish
 
 group netstandard2.0
   source https://api.nuget.org/v3/index.json

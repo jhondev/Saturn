@@ -13,6 +13,8 @@ NUGET
       System.Reflection.Emit (>= 4.3)
       System.Reflection.TypeExtensions (>= 4.3)
       System.Xml.XmlDocument (>= 4.3)
+    Elmish (3.0.6)
+      FSharp.Core (>= 4.6.2)
     Expecto (9.0)
       FSharp.Core (>= 4.6)
       Mono.Cecil (>= 0.11.2)
