@@ -1,0 +1,705 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      Saturn | RouterBuilder
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://saturnframework.org//static/images/favicon.png"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/theme-blue.css"/>
+    <script src="https://saturnframework.org//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            Saturn
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="https://saturnframework.org//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="https://saturnframework.org//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='https://saturnframework.org/'
+        </script>
+        <script type="text/javascript" src="https://saturnframework.org//static/js/search.js"></script>
+        <script src="https://saturnframework.org//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-explanations" class="dd-item menu-group-link">
+            <a>
+              Explanation
+            </a>
+          </li>
+          <li id="menu-tutorials" class="dd-item menu-group-link">
+            <a>
+              Tutorials
+            </a>
+          </li>
+          <li id="menu-refs" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-explanations" class="submenu">
+          <li>
+            <a href="https://saturnframework.org//explanations/overview.html" class="padding">
+              Saturn Overview
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/directory-structure.html" class="padding">
+              Directory Structure
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/scaffolding.html" class="padding">
+              Scaffolding
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/pipeline.html" class="padding">
+              Pipeline
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/routing.html" class="padding">
+              Router
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/view.html" class="padding">
+              View Engine
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/controller.html" class="padding">
+              Controllers
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-tutorials" class="submenu">
+          <li>
+            <a href="https://saturnframework.org//tutorials/how-to-start.html" class="padding">
+              Getting started
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//tutorials/adding-saturn-to-an-existing-giraffe-app.html" class="padding">
+              Getting started
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//tutorials/adding-pages.html" class="padding">
+              Adding Pages
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu submenu-active">
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn/index.html" class="padding">
+              Saturn
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.AzureFunctions/index.html" class="padding">
+              Saturn.AzureFunctions
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.Authorization/index.html" class="padding">
+              Saturn.Extensions.Authorization
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.gRPC/index.html" class="padding">
+              Saturn.Extensions.gRPC
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.HttpSys/index.html" class="padding">
+              Saturn.Extensions.HttpSys
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.OpenIdConnect/index.html" class="padding">
+              Saturn.Extensions.OpenIdConnect
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.Turbolinks/index.html" class="padding">
+              Saturn.Extensions.Turbolinks
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://safe-stack.github.io/">
+                <i class="fas fa-cubes"></i>
+                SAFE Stack
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/SaturnFramework/Saturn">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="/license.html">
+                <i class="far fa-file-alt"></i>
+                License
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <div class="api-page">
+            <h2>
+              RouterBuilder
+            </h2>
+            <b>
+              Namespace: 
+            </b>
+            <a href="Saturn.html">
+              Saturn
+            </a>
+            <br/>
+            <b>
+              Parent: 
+            </b>
+            <a href="saturn-router.html">
+              Router
+            </a>
+            <span>
+              <p>Computation expression used to create routing, combining <code>HttpHandlers</code>, <code>pipelines</code> and <code>controllers</code> together.</p>
+<p>The result of the computation expression is a standard Giraffe <code>HttpHandler</code>, which means that it's easily composable with other parts of the ecosytem.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-fsharp">let topRouter = router {
+    pipe_through headerPipe
+    not_found_handler (text &quot;404&quot;)
+
+    get &quot;/&quot; helloWorld
+    get &quot;/a&quot; helloWorld2
+    getf &quot;/name/%s&quot; helloWorldName
+    getf &quot;/name/%s/%i&quot; helloWorldNameAge
+
+    //routers can be defined inline to simulate `subRoute` combinator
+    forward &quot;/other&quot; (router {
+        pipe_through otherHeaderPipe
+        not_found_handler (text &quot;Other 404&quot;)
+
+        get &quot;/&quot; otherHelloWorld
+        get &quot;/a&quot; otherHelloWorld2
+    })
+
+    // or can be defined separatly and used as HttpHandler
+    forward &quot;/api&quot; apiRouter
+
+    // same with controllers
+    forward &quot;/users&quot; userController
+}
+</code></pre>
+
+            </span>
+            <br/>
+            <table>
+              <tr>
+                <th width="35%">
+                  Name
+                </th>
+                <th width="65%">
+                  Description
+                </th>
+              </tr>
+              <tr>
+                <td colSpan="3">
+                  <b>
+                    Instance Members
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    CaseInsensitive
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    case_insensitive
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  state:RouterState -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Toggle case insensitve routing</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Delete
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    delete
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:string * action:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>DELETE</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    DeleteF
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    deletef
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:PrintfFormat<'?41164,'?41165,'?41166,'?41167,'?41168> * action:('?41168 -> HttpHandler)) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>DELETE</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Forward
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    forward
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:string * action:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Forwards calls to different <code>scope</code>. Modifies the <code>HttpRequest.Path</code> to allow subrouting.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Forwardf
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    forwardf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:PrintfFormat<'?41178,'?41179,'?41180,'?41181,'?41182> * action:('?41182 -> HttpHandler)) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Forwards calls to different <code>scope</code>. Modifies the <code>HttpRequest.Path</code> to allow subrouting.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Get
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    get
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:string * action:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>GET</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    GetF
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    getf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:PrintfFormat<'?41143,'?41144,'?41145,'?41146,'f> * action:('f -> HttpHandler)) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>GET</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    NotFoundHandler
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    not_found_handler
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * handler:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds not-found handler for current scope</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Patch
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    patch
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:string * action:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>PATCH</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PatchF
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    patchf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:PrintfFormat<'?41171,'?41172,'?41173,'?41174,'?41175> * action:('?41175 -> HttpHandler)) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>PATCH</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PipeThrough
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    pipe_through
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * pipe:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds pipeline to the list of pipelines that will be used for every request</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Post
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    post
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:string * action:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>POST</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PostF
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    postf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:PrintfFormat<'?41150,'?41151,'?41152,'?41153,'?41154> * action:('?41154 -> HttpHandler)) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>POST</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Put
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    put
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:string * action:HttpHandler) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>PUT</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    PutF
+                  </code>
+                  <br/>
+                  <b>
+                    CE Custom Operation: 
+                  </b>
+                  <code>
+                    putf
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  (state:RouterState * path:PrintfFormat<'?41157,'?41158,'?41159,'?41160,'?41161> * action:('?41161 -> HttpHandler)) -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  <p>Adds handler for <code>PUT</code> request.</p>
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Run
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  state:RouterState -> HttpHandler
+                  <br/>
+                </td>
+                <td>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>
+                    Yield
+                  </code>
+                  <br/>
+                  <br/>
+                  <b>
+                    Signature: 
+                  </b>
+                  '?41139 -> RouterState
+                  <br/>
+                </td>
+                <td>
+                  
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://saturnframework.org//static/js/clipboard.min.js"></script>
+    <script src="https://saturnframework.org//static/js/perfect-scrollbar.min.js"></script>
+    <script src="https://saturnframework.org//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://saturnframework.org//static/js/jquery.sticky.js"></script>
+    <script src="https://saturnframework.org//static/js/featherlight.min.js"></script>
+    <script src="https://saturnframework.org//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="https://saturnframework.org//static/js/learn.js"></script>
+    <script src="https://saturnframework.org//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="https://saturnframework.org//static/mermaid/mermaid.css"/>
+    <script src="https://saturnframework.org//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>

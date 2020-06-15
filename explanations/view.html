@@ -1,0 +1,574 @@
+<html class="js csstransforms3d">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      Saturn | View Engine
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://saturnframework.org//static/images/favicon.png"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/nucleus.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/hybrid.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/featherlight.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/auto-complete.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/atom-one-dark-reasonable.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/theme.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"/>
+    <link rel="stylesheet" href="https://saturnframework.org//static/css/theme-blue.css"/>
+    <script src="https://saturnframework.org//static/js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <div id="header-wrapper">
+        <div id="header">
+          <h2 id="logo">
+            Saturn
+          </h2>
+        </div>
+        <div class="searchbox">
+          <label for="search-by">
+            <i class="fas fa-search"></i>
+          </label>
+          <input data-search-input="" id="search-by" type="search" placeholder="Search..."/>
+          <span data-search-clear="">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <script type="text/javascript" src="https://saturnframework.org//static/js/lunr.min.js"></script>
+        <script type="text/javascript" src="https://saturnframework.org//static/js/auto-complete.js"></script>
+        <script type="text/javascript">
+          var baseurl ='https://saturnframework.org/'
+        </script>
+        <script type="text/javascript" src="https://saturnframework.org//static/js/search.js"></script>
+        <script src="https://saturnframework.org//static/js/highlight.pack.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+        </script>
+      </div>
+      <div class="highlightable">
+        <ul class="topics">
+          <li id="menu-explanations" class="dd-item menu-group-link menu-group-link-active">
+            <a>
+              Explanation
+            </a>
+          </li>
+          <li id="menu-tutorials" class="dd-item menu-group-link">
+            <a>
+              Tutorials
+            </a>
+          </li>
+          <li id="menu-refs" class="dd-item menu-group-link">
+            <a>
+              API References
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-explanations" class="submenu submenu-active">
+          <li>
+            <a href="https://saturnframework.org//explanations/overview.html" class="padding">
+              Saturn Overview
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/directory-structure.html" class="padding">
+              Directory Structure
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/scaffolding.html" class="padding">
+              Scaffolding
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/pipeline.html" class="padding">
+              Pipeline
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/routing.html" class="padding">
+              Router
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/view.html" class="active-link padding">
+              View Engine
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//explanations/controller.html" class="padding">
+              Controllers
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-tutorials" class="submenu">
+          <li>
+            <a href="https://saturnframework.org//tutorials/how-to-start.html" class="padding">
+              Getting started
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//tutorials/adding-saturn-to-an-existing-giraffe-app.html" class="padding">
+              Getting started
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//tutorials/adding-pages.html" class="padding">
+              Adding Pages
+            </a>
+          </li>
+        </ul>
+        <ul id="submenu-refs" class="submenu">
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn/index.html" class="padding">
+              Saturn
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.AzureFunctions/index.html" class="padding">
+              Saturn.AzureFunctions
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.Authorization/index.html" class="padding">
+              Saturn.Extensions.Authorization
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.gRPC/index.html" class="padding">
+              Saturn.Extensions.gRPC
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.HttpSys/index.html" class="padding">
+              Saturn.Extensions.HttpSys
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.OpenIdConnect/index.html" class="padding">
+              Saturn.Extensions.OpenIdConnect
+            </a>
+          </li>
+          <li>
+            <a href="https://saturnframework.org//reference/Saturn.Extensions.Turbolinks/index.html" class="padding">
+              Saturn.Extensions.Turbolinks
+            </a>
+          </li>
+        </ul>
+        <section id="shortcuts">
+          <h3>
+            Shortucts
+          </h3>
+          <ul>
+            <li>
+              <a class="padding" href="/">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://safe-stack.github.io/">
+                <i class="fas fa-cubes"></i>
+                SAFE Stack
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="https://github.com/SaturnFramework/Saturn">
+                <i class="fab fa-github"></i>
+                GitHub repo
+              </a>
+            </li>
+            <li>
+              <a class="padding" href="/license.html">
+                <i class="far fa-file-alt"></i>
+                License
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="footer">
+          <p>Built with <a href="https://github.com/ionide/Fornax">Fornax</a>
+        </section>
+      </div>
+    </nav>
+    <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        <div id="body-inner">
+          <span id="sidebar-toggle-span">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+              <i class="fas fa-bars"></i>
+               navigation
+            </a>
+          </span>
+          <h1>View Engine</h1>
+<blockquote>
+<p>This post has been originally part of the <a href="https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md#giraffe-view-engine">Giraffe documentation</a></p>
+</blockquote>
+<p>Saturn is built on top of Giraffe and can use any helpers it provides. This is a case for suggested view engine that you can use in Saturn - Giraffe has its own functional view engine which can be used to build rich UIs for web applications. The single biggest and best contrast to other view engines (e.g. Razor, Liquid, etc.) is that the Giraffe View Engine is entirely functional written in normal (and compiled) F# code.</p>
+<p>This means that the Giraffe View Engine is by definition one of the most feature rich view engines available, requires no disk IO to load a view and views are automatically compiled at build time.</p>
+<p>The Giraffe View Engine uses traditional functions and F# record types to generate rich HTML/XML views.</p>
+<h3>HTML Elements and Attributes</h3>
+<p>HTML elements and attributes are defined as F# objects:</p>
+<pre><code class="language-fsharp">let indexView =
+    html [] [
+        head [] [
+            title [] [ str &quot;Giraffe Sample&quot; ]
+        ]
+        body [] [
+            h1 [] [ str &quot;I |&gt; F#&quot; ]
+            p [ _class &quot;some-css-class&quot;; _id &quot;someId&quot; ] [
+                str &quot;Hello World&quot;
+            ]
+        ]
+    ]
+</code></pre>
+<p>A HTML element can either be a <code>ParentNode</code>, a <code>VoidElement</code> or a <code>Text</code> element.</p>
+<p>For example the <code>&lt;html&gt;</code> or <code>&lt;div&gt;</code> tags are typical <code>ParentNode</code> elements. They can hold an <code>XmlAttribute list</code> and a second <code>XmlElement list</code> for their child elements:</p>
+<pre><code class="language-fsharp">let someHtml = div [] []
+</code></pre>
+<p>All <code>ParentNode</code> elements accept these two parameters:</p>
+<pre><code class="language-fsharp">let someHtml =
+    div [ _id &quot;someId&quot;; _class &quot;css-class&quot; ] [
+        a [ _href &quot;https://example.org&quot; ] [ str &quot;Some text...&quot; ]
+    ]
+</code></pre>
+<p>Most HTML tags are <code>ParentNode</code> elements, however there is a few HTML tags which cannot hold any child elements, such as <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code> or <code>&lt;meta&gt;</code> tags. These are represented as <code>VoidElement</code> objects and only accept the <code>XmlAttribute list</code> as single parameter:</p>
+<pre><code class="language-fsharp">let someHtml =
+    div [] [
+        br []
+        hr [ _class &quot;css-class-for-hr&quot; ]
+        p [] [ str &quot;bla blah&quot; ]
+    ]
+</code></pre>
+<p>Attributes are further classified into two different cases. First and most commonly there are <code>KeyValue</code> attributes:</p>
+<pre><code class="language-fsharp">a [
+    _href &quot;http://url.com&quot;
+    _target &quot;_blank&quot;
+    _class &quot;class1&quot; ] [ str &quot;Click here&quot; ]
+</code></pre>
+<p>As the name suggests, they have a key, such as <code>class</code> and a value such as the name of a CSS class.</p>
+<p>The second category of attributes are <code>Boolean</code> flags. There are not many but some HTML attributes which do not require any value (e.g. <code>async</code> or <code>defer</code> in script tags). The presence of such an attribute means that the feature is turned on, otherwise it is turned off:</p>
+<pre><code class="language-fsharp">script [ _src &quot;some.js&quot;; _async ] []
+</code></pre>
+<p>There's also a wealth of <a href="https://www.w3.org/TR/html-aria/">accessibility attributes</a> available under the <code>Giraffe.GiraffeViewEngine.Accessibility</code> module (needs to be explicitly opened).</p>
+<h3>Text Content</h3>
+<p>Naturally the most frequent content in any HTML document is pure text:</p>
+<pre><code class="language-html">&lt;div&gt;
+    &lt;h1&gt;This is text content&lt;/h1&gt;
+    &lt;p&gt;This is even more text content!&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The Giraffe View Engine lets one create pure text content as a <code>Text</code> element. A <code>Text</code> element can either be generated via the <code>rawText</code> or <code>encodedText</code> (or the short alias <code>str</code>) functions:</p>
+<pre><code class="language-fsharp">let someHtml =
+    div [] [
+        p [] [ rawText &quot;&lt;div&gt;Hello World&lt;/div&gt;&quot; ]
+        p [] [ encodedText &quot;&lt;div&gt;Hello World&lt;/div&gt;&quot; ]
+    ]
+</code></pre>
+<p>The <code>rawText</code> function will create an object of type <code>XmlNode</code> where the content will be rendered in its original form and the <code>encodedText</code>/<code>str</code> function will output a string where the content has been HTML encoded.</p>
+<p>In this example the first <code>p</code> element will literally output the string as it is (<code>&lt;div&gt;Hello World&lt;/div&gt;</code>) while the second <code>p</code> element will output the value as HTML encoded string <code>&amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;</code>.</p>
+<p>Please be aware that the the usage of <code>rawText</code> is mainly designed for edge cases where someone would purposefully want to inject HTML (or JavaScript) code into a rendered view. If not used carefully this could potentially lead to serious security vulnerabilities and therefore should be used only when explicitly required.</p>
+<p>Most cases and particularly any user provided content should always be output via the <code>encodedText</code>/<code>str</code> function.</p>
+<h3>Javascript event handlers</h3>
+<p>It is possible to add JavaScript event handlers to HTML elements using the Giraffe View Engine.  These event handlers (all prefixed with names starting with <code>_on</code>, for example <code>_onclick</code>, <code>_onmouseover</code>) can either execute inline JavaScript code or can invoke functions that are part of the <code>window</code> scope.</p>
+<p>This example illustrates how inline JavaScript could be used to log to the console when a button is clicked:</p>
+<pre><code class="language-fsharp">let inlineJSButton =
+    button [_id &quot;inline-js&quot;
+            _onclick &quot;console.log(\&quot;Hello from the 'inline-js' button!\&quot;);&quot;] [str &quot;Say Hello&quot; ]
+</code></pre>
+<p>There are some caveats with this approach, namely that</p>
+<ul>
+<li>it is not very scalable to write JavaScript inline in this manner, and more pressing</li>
+<li>the Giraffe View Engine HTML-encodes the text provided to the <code>_onX</code> attributes.</li>
+</ul>
+<p>To get around this, you can write dedicated scripts in your HTML and reference the functions from your event handlers:</p>
+<pre><code class="language-fsharp">let page =
+    div [] [
+        script [_type &quot;application/javascript&quot;] [
+            rawText &quot;&quot;&quot;
+            window.greet = function () {
+                console.log(&quot;ping from the greet method&quot;);
+            }
+            &quot;&quot;&quot;
+        ]
+        button [_id &quot;script-tag-js&quot;
+                _onclick &quot;greet();&quot;] [str &quot;Say Hello&quot;]
+    ]
+</code></pre>
+<p>Here it's important to note that we've included the text of our script using the <code>rawText</code> tag.  This ensures that our text is not encoded by Giraffe so that it remains as we have written it.</p>
+<p>However, writing large quantities of JavaScript in this manner can be difficult, because you don't have access to the large ecosystem of javascript editor tooling.  In this case you should write your functions in another script and use a <code>script</code> tag element to reference your script, then add the desired function to your HTML element's event handler.</p>
+<p>Say you had a JavaScript file named <code>greet.js</code> and had configured Giraffe to serve that script from the WebRoot. Let us also say that the content of that script was:</p>
+<pre><code class="language-javascript">function greet() {
+    console.log(&quot;Hello from the greet function of greet.js!&quot;);
+}
+</code></pre>
+<p>Then, you could reference that javascript via a script element, and use <code>greet</code> in your event handler like so:</p>
+<pre><code class="language-fsharp">let page =
+    html [] [
+        head [] [
+            script [_type &quot;application/javascript&quot;
+                    _src &quot;/greet.js&quot;] [] // include our `greet.js` function dynamically
+        ]
+        body [] [
+            button [_id &quot;greet-btn&quot;
+                    _onclick &quot;greet()&quot;] [] // use the `greet()` function from `greet.js` to say hello
+        ]
+    ]
+</code></pre>
+<p>In this way, you can write <code>greet.js</code> with all of your expected tooling, and still hook up the event handlers all in one place in Giraffe.</p>
+<h3>Naming Convention</h3>
+<p>The Giraffe View Engine has a naming convention which lets you easily determine the correct function name without having to know anything about the view engine's implementation.</p>
+<p>All HTML tags are defined as <code>XmlNode</code> elements under the exact same name as they are named in HTML. For example the <code>&lt;html&gt;</code> tag would be <code>html [] []</code>, an <code>&lt;a&gt;</code> tag would be <code>a [] []</code> and a <code>&lt;span&gt;</code> or <code>&lt;canvas&gt;</code> would be the <code>span [] []</code> or <code>canvas [] []</code> function.</p>
+<p>HTML attributes follow the same naming convention except that attributes have an underscore prepended. For example the <code>class</code> attribute would be <code>_class</code> and the <code>src</code> attribute would be <code>_src</code> in Giraffe.</p>
+<p>The underscore does not only help to distinguish an attribute from an element, but also avoid a naming conflict between tags and attributes of the same name (e.g. <code>&lt;form&gt;</code> vs. <code>&lt;input form=&quot;form1&quot;&gt;</code>).</p>
+<p>If a HTML attribute has a hyphen in the name (e.g. <code>accept-charset</code>) then the equivalent Giraffe attribute would be written in camel case notion (e.g. <code>acceptCharset</code>).</p>
+<p><em>Should you find a HTML tag or attribute missing in the Giraffe View Engine then you can either <a href="#custom-elements-and-attributes">create it yourself</a> or send a <a href="https://github.com/giraffe-fsharp/Giraffe/pulls">pull request on GitHub</a>.</em></p>
+<h3>View Engine Best Practices</h3>
+<p>Due to the huge amount of available HTML tags and their fairly generic (and short) names (e.g. <code>&lt;form&gt;</code>, <code>&lt;option&gt;</code>, <code>&lt;select&gt;</code>, etc.) there is a significant danger of accidentally overriding a function of the same name in an application's codebase. For that reason the Giraffe View Engine becomes only available after opening the <code>GiraffeViewEngine</code> module.</p>
+<p>As a measure of good practice it is recommended to create all views in a separate module:</p>
+<pre><code class="language-fsharp">module MyWebApplication
+
+module Views =
+    open Giraffe.GiraffeViewEngine
+
+    let index =
+        html [] [
+            head [] [
+                title [] [ str &quot;Giraffe Sample&quot; ]
+            ]
+            body [] [
+                h1 [] [ str &quot;I |&gt; F#&quot; ]
+                p [ _class &quot;some-css-class&quot;; _id &quot;someId&quot; ] [
+                    str &quot;Hello World&quot;
+                ]
+            ]
+        ]
+
+    let other = //...
+</code></pre>
+<p>This ensures that the opening of the <code>GiraffeViewEngine</code> is only contained in a small context of an application's codebase and therefore less of a threat to accidental overrides. In the above example views can always be accessed through the <code>Views</code> sub module (e.g. <code>Views.index</code>).</p>
+<h3>Custom Elements and Attributes</h3>
+<p>Adding new elements or attributes is normally as simple as a single line of code:</p>
+<pre><code class="language-fsharp">open Giraffe.GiraffeViewEngine
+
+// If there was a new &lt;foo&gt;&lt;/foo&gt; HTML element:
+let foo = tag &quot;foo&quot;
+
+// If &lt;foo&gt; is an element which cannot hold any content then create it as voidTag:
+let foo = voidTag &quot;foo&quot;
+
+// If &lt;foo&gt; has a new attribute called bar then create a new bar attribute:
+let _bar = attr &quot;bar&quot;
+
+// if the bar attribute is a boolean flag:
+let _bar = flag &quot;bar&quot;
+</code></pre>
+<p>Alternatively you can also create new elements and attributes from inside another element:</p>
+<pre><code class="language-fsharp">let someHtml =
+    div [] [
+        tag &quot;foo&quot; [ attr &quot;bar&quot; &quot;blah&quot; ] [
+            voidTag &quot;otherFoo&quot; [ flag &quot;flag1&quot; ]
+        ]
+    ]
+</code></pre>
+<h3>Rendering Views</h3>
+<p>Rendering views in Giraffe is done through one of the following functions:</p>
+<ul>
+<li><code>renderHtmlDocument</code></li>
+<li><code>renderHtmlNodes</code></li>
+<li><code>renderHtmlNode</code></li>
+<li><code>renderXmlNodes</code></li>
+<li><code>renderXmlNode</code></li>
+</ul>
+<p>The Giraffe View Engine cannot only be used to render HTML views, but also for any other XML based content such as <code>&lt;svg&gt;</code> images or other arbitrary XML based data.</p>
+<p>The <code>renderHtmlDocument</code> function takes a single <code>XmlNode</code> as input parameter and renders a HTML page with a <code>DOCTYPE</code> declaration. This function should be used for rendering a complete HTML document. The <code>WriteHtmlViewAsync</code> extension method and the <code>htmlView</code> http handler both use the <code>renderHtmlDocument</code> function under the covers.</p>
+<p>The <code>renderHtmlNodes</code> function takes an <code>XmlNode list</code> as input parameter and will output a single HTML string containing all the rendered HTML code. The <code>renderHtmlNode</code> function renders a single <code>XmlNode</code> element into a valid HTML string. Both, the <code>renderHtmlNodes</code> and <code>renderHtmlNode</code> function are useful for use cases where a HTML snippet needs to be created without a <code>DOCTYPE</code> declaration (e.g. templated emails, etc.).</p>
+<p>The <code>renderXmlNodes</code> and <code>renderXmlNode</code> function are identical to <code>renderHtmlNodes</code> and <code>renderHtmlNode</code>, except that they will render void elements differently:</p>
+<pre><code class="language-fsharp">let someTag = voidTag &quot;foo&quot;
+let someContent = someTag []
+
+// Void tag will be rendered to valid HTML: &lt;foo&gt;
+let output1 = renderHtmlNode someContent
+
+// Void tag will be rendered to valid XML: &lt;foo /&gt;
+let output2 = renderXmlNode someContent
+</code></pre>
+<p>All <code>GiraffeViewEngine</code> http handlers are using a thread static <code>StringBuilderPool</code> to avoid the creation of large <code>StringBuilder</code> objects for each render call and dynamically grow/shrink that pool based on the application's needs. However if the application is running into any memory issues then this performance feature can be disabled by setting <code>StringBuilderPool.IsEnabled &lt;- false</code>.</p>
+<p>Additionally with Giraffe 3.0.0 or higher there is a new module called <code>ViewBuilder</code> under the <code>Giraffe.GiraffeViewEngine</code> namespace. This module exposes additional view rendering functions which compile a view into a <code>StringBuilder</code> object instead of returning a single <code>string</code>:</p>
+<ul>
+<li><code>ViewBuilder.buildHtmlDocument</code></li>
+<li><code>ViewBuilder.buildHtmlNodes</code></li>
+<li><code>ViewBuilder.buildHtmlNode</code></li>
+<li><code>ViewBuilder.buildXmlNodes</code></li>
+<li><code>ViewBuilder.buildXmlNode</code></li>
+</ul>
+<p>The <code>ViewBuilder.build[...]</code> functions can be useful if there is additional string processing required before/after composing a view by the <code>GiraffeViewEngine</code> (e.g. embedding HTML snippets in an email template, etc.). These functions also serve as the lower level building blocks of the equivalent <code>render[...]</code> functions.</p>
+<p>Example usage:</p>
+<pre><code class="language-fsharp">open System.Text
+open Giraffe.GiraffeViewEngine
+
+let someHtml =
+    div [] [
+        tag &quot;foo&quot; [ attr &quot;bar&quot; &quot;blah&quot; ] [
+            voidTag &quot;otherFoo&quot; [ flag &quot;flag1&quot; ]
+        ]
+    ]
+
+let sb = new StringBuilder()
+
+// Perform actions on the `sb` object...
+sb.AppendLine &quot;This is a HTML snippet inside a markdown string:&quot;
+  .AppendLine &quot;&quot;
+  .AppendLine &quot;```html&quot; |&gt; ignore
+
+let sb' = ViewBuilder.buildHtmlNode sb someHtml
+
+// Perform more actions on the `sb` object...
+sb'.AppendLine &quot;```&quot; |&gt; ignore
+
+let markdownOutput = sb'.ToString()
+</code></pre>
+<h3>Common View Engine Features</h3>
+<p>The Giraffe View Engine doesn't have any specially built functions for commonly known features such as master pages or partial views, mainly because the nature of the view engine itself doesn't require it in most cases.</p>
+<h4>Master Pages</h4>
+<p>Creating a master page is a simple matter of piping two functions together:</p>
+<pre><code class="language-fsharp">module Views =
+    open Giraffe.GiraffeViewEngine
+
+    let master (pageTitle : string) (content: XmlNode list) =
+        html [] [
+            head [] [
+                title [] [ str pageTitle ]
+            ]
+            body [] content
+        ]
+
+    let index =
+        let pageTitle = &quot;Giraffe Sample&quot;
+        [
+            h1 [] [ str pageTitle ]
+            p [] [ str &quot;Hello world!&quot; ]
+        ] |&gt; master pageTitle
+</code></pre>
+<p>... or even have multiple nested master pages:</p>
+<pre><code class="language-fsharp">module Views =
+    open Giraffe.GiraffeViewEngine
+
+    let master1 (pageTitle : string) (content: XmlNode list) =
+        html [] [
+            head [] [
+                title [] [ str pageTitle ]
+            ]
+            body [] content
+        ]
+
+    let master2 (content: XmlNode list) =
+        [
+            main [] content
+            footer [] [
+                p [] [
+                    str &quot;Copyright ...&quot;
+                ]
+            ]
+        ]
+
+    let index =
+        let pageTitle = &quot;Giraffe Sample&quot;
+        [
+            h1 [] [ str pageTitle ]
+            p [] [ str &quot;Hello world!&quot; ]
+        ] |&gt; master2 |&gt; master1 pageTitle
+</code></pre>
+<h4>Partial Views</h4>
+<p>A partial view is nothing more than one function or object being called from within another function:</p>
+<pre><code class="language-fsharp">module Views =
+    open Giraffe.GiraffeViewEngine
+
+    let partial =
+        footer [] [
+            p [] [
+                str &quot;Copyright...&quot;
+            ]
+        ]
+
+    let master (pageTitle : string) (content: XmlNode list) =
+        html [] [
+            head [] [
+                title [] [ str pageTitle ]
+            ]
+            body [] content
+            partial
+        ]
+
+    let index =
+        let pageTitle = &quot;Giraffe Sample&quot;
+        [
+            h1 [] [ str pageTitle ]
+            p [] [ str &quot;Hello world!&quot; ]
+        ] |&gt; master pageTitle
+</code></pre>
+<h4>Working with Models</h4>
+<p>A view which accepts a model is basically a function with an additional parameter:</p>
+<pre><code class="language-fsharp">module Views =
+    open Giraffe.GiraffeViewEngine
+
+    let partial =
+        footer [] [
+            p [] [
+                str &quot;Copyright...&quot;
+            ]
+        ]
+
+    let master (pageTitle : string) (content: XmlNode list) =
+        html [] [
+            head [] [
+                title [] [ str pageTitle ]
+            ]
+            body [] content
+            partial
+        ]
+
+    let index (model : IndexViewModel) =
+        [
+            h1 [] [ str model.PageTitle ]
+            p [] [ str model.WelcomeText ]
+        ] |&gt; master model.PageTitle
+</code></pre>
+<h4>If Statements, Loops, etc.</h4>
+<p>Things like if statements, loops and other normal F# language constructs work just as expected:</p>
+<pre><code class="language-fsharp">let partial (books : Book list) =
+    ul [] [
+        yield!
+            books
+            |&gt; List.map (fun b -&gt; li [] [ str book.Title ])
+    ]
+</code></pre>
+<p>Overall the Giraffe View Engine is extremely flexible and feature rich by nature based on the fact that it is generated via normal compiled F# code.</p>
+
+        </div>
+      </div>
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://saturnframework.org//static/js/clipboard.min.js"></script>
+    <script src="https://saturnframework.org//static/js/perfect-scrollbar.min.js"></script>
+    <script src="https://saturnframework.org//static/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://saturnframework.org//static/js/jquery.sticky.js"></script>
+    <script src="https://saturnframework.org//static/js/featherlight.min.js"></script>
+    <script src="https://saturnframework.org//static/js/modernizr.custom-3.6.0.js"></script>
+    <script src="https://saturnframework.org//static/js/learn.js"></script>
+    <script src="https://saturnframework.org//static/js/hugo-learn.js"></script>
+    <link rel="stylesheet" href="https://saturnframework.org//static/mermaid/mermaid.css"/>
+    <script src="https://saturnframework.org//static/mermaid/mermaid.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/fsharp.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>
